@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+
 import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
 
@@ -16,6 +17,7 @@ function Button({
     large = false,
     text = false,
     disabled = false,
+    success = false,
     leftIcon,
     rightIcon,
     onClick,
@@ -33,6 +35,7 @@ function Button({
         [className]: className,
         leftIcon,
         rightIcon,
+        success,
     });
 
     const props = {
@@ -75,6 +78,7 @@ Button.propTypes = {
     leftIcon: PropTypes.node,
     rightIcon: PropTypes.node,
     onClick: PropTypes.func,
+    success: PropTypes.bool,
 };
 
 export default Button;

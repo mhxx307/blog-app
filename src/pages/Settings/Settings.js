@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 
 import Button from '~/components/Button';
+import Input from '~/components/Input';
 import { Sidebar } from '~/components/layouts';
 import styles from './Setting.module.scss';
 
@@ -33,16 +34,13 @@ function Settings() {
                         <input type="file" id="fileInput" style={{ display: 'none' }} />
                     </div>
 
-                    <label>Username</label>
-                    <input type="text" placeholder="Enter username..." />
+                    <Input labelText="Username" type="text" placeHolder="Enter username..." custom1 />
 
-                    <label>Email</label>
-                    <input type="email" placeholder="Enter your email..." />
+                    <Input labelText="Email" type="email" placeHolder="Enter email..." custom1 />
 
-                    <label>Password</label>
-                    <input type="password" placeholder="Enter your password..." />
+                    <Input labelText="Password" type="password" placeHolder="Enter password..." custom1 />
 
-                    <Button primary className={cx('settings-submit')}>
+                    <Button success className={cx('settings-submit')}>
                         Update
                     </Button>
                 </form>

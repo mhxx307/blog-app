@@ -1,4 +1,4 @@
-.login {
+.register {
     height: calc(100vh - 50px);
     display: flex;
     flex-direction: column;
@@ -9,23 +9,23 @@
     background-size: cover;
 }
 
-.login-title {
+.register-title {
     font-family: 'Lora', serif;
     font-size: 5rem;
     color: var(--black);
 }
 
-.login-form {
+.register-form {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.login-btn {
+.register-btn {
     margin-top: 20px;
 }
 
-.register-btn {
+.login-btn {
     position: absolute;
     top: 60px;
     right: 20px;

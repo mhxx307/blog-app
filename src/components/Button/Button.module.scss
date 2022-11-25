@@ -34,6 +34,15 @@
 // Button types
 .primary {
     color: var(--white-color);
+    background-color: var(--primary-color);
+    &:hover {
+        opacity: 0.8;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+.success {
+    color: var(--white-color);
     background-color: teal;
     &:hover {
         opacity: 0.8;

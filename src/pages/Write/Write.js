@@ -34,7 +34,7 @@ function Write() {
                     ></textarea>
                 </div>
 
-                <Button className={cx('write-submit')} primary>
+                <Button className={cx('write-submit')} success>
                     Publish
                 </Button>
             </form>
