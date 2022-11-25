@@ -19,20 +19,20 @@
 
 .top-center {
     flex: 6;
+}
 
-    .top-list {
-        display: flex;
-        justify-content: center;
-        list-style-type: none;
-    }
+.top-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
 
-    .top-list-item {
-        margin-right: 20px;
-        font-size: 1.8rem;
-        font-weight: 300;
-        cursor: pointer;
-        text-transform: uppercase;
-    }
+.top-list-item {
+    margin-right: 20px;
+    font-size: 1.8rem;
+    font-weight: 300;
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
 .top-right {
