@@ -1,0 +1,75 @@
+.settings {
+    display: flex;
+}
+
+.settings-wrapper {
+    flex: 9;
+    padding: 20px;
+}
+
+.settings-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settings-update-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.settings-delete-title {
+    color: red;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+
+    .settings-profile-picture {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .settings-profile-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 30px;
+        object-fit: cover;
+    }
+
+    .settings-profile-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        margin-left: 10px;
+    }
+
+    label {
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+
+    input {
+        color: gray;
+        margin: 10px 0;
+        height: 30px;
+        border: none;
+        border-bottom: 1px solid lightgray;
+    }
+
+    .settings-submit {
+        width: 150px;
+        align-self: center;
+        margin-top: 20px;
+    }
+}
