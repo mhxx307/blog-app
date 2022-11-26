@@ -1,9 +1,10 @@
 import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import styles from './SinglePost.module.scss';
 import * as postsService from '~/services/postsService';
+import Context from '~/storage/Context';
 
 const cx = classNames.bind(styles);
 
@@ -11,6 +12,7 @@ function SinglePost() {
     const [post, setPost] = useState({});
     const location = useLocation();
     const postId = location.pathname.split('/')[2];
+    const { user } = useContext(Context);
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -19,6 +21,11 @@ function SinglePost() {
         };
         fetchPost();
     }, [postId]);
+
+    const handleDelete = async () => {
+        await postsService.deletePost(post._id, user.username);
+        window.location.replace('/');
+    };
 
     return (
         <div className={cx('single-post')}>
@@ -33,14 +40,19 @@ function SinglePost() {
 
                 <h1 className={cx('single-post-title')}>
                     {post.title}
-                    <div className={cx('single-post-edit')}>
-                        <span className={cx('single-post-icon')}>
-                            <i className="far fa-edit"></i>
-                        </span>
-                        <span className={cx('single-post-icon')}>
-                            <i className="far fa-trash-alt"></i>
-                        </span>
-                    </div>
+                    {post.username === user?.username && (
+                        <div className={cx('single-post-edit')}>
+                            <span className={cx('single-post-icon')}>
+                                <i className="far fa-edit"></i>
+                            </span>
+                            <span
+                                className={cx('single-post-icon')}
+                                onClick={handleDelete}
+                            >
+                                <i className="far fa-trash-alt"></i>
+                            </span>
+                        </div>
+                    )}
                 </h1>
 
                 <div className={cx('single-post-info')}>

@@ -26,3 +26,16 @@ export const createPost = async (newPost) => {
         console.log(err);
     }
 };
+
+export const deletePost = async (postId, username) => {
+    try {
+        const res = await httpRequest.delete(`/posts/${postId}`, {
+            data: {
+                username: username,
+            },
+        });
+        return res;
+    } catch (err) {
+        console.log(err);
+    }
+};
