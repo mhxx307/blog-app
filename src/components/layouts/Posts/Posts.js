@@ -5,13 +5,12 @@ import styles from './Posts.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Posts() {
+function Posts({ posts }) {
     return (
         <div className={cx('posts')}>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+            {posts.map((post) => {
+                return <Post post={post} />;
+            })}
         </div>
     );
 }

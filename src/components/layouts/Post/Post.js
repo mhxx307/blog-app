@@ -1,36 +1,33 @@
 import classNames from 'classnames/bind';
+
+import { Link } from 'react-router-dom';
+import Image from '~/components/Image';
 import styles from './Post.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Post() {
+function Post({ post }) {
     return (
         <div className={cx('post')}>
-            <img
-                className={cx('post-img')}
-                src="https://c4.wallpaperflare.com/wallpaper/291/819/697/illustration-city-anime-painting-wallpaper-preview.jpg"
-                alt="post-img"
-            />
+            <Image className={cx('post-img')} src={post.photo} alt={post.photo} />
 
             <div className={cx('post-info')}>
                 <div className={cx('post-cats')}>
-                    <span className={cx('post-cat')}>Music</span>
-                    <span className={cx('post-cat')}>Life</span>
+                    {post.categories.map((cat) => (
+                        <span className={cx('post-cat')}>{cat.name}</span>
+                    ))}
                 </div>
 
-                <div className={cx('post-title')}>Lorem ipsum dolor sit amet consectetur.</div>
+                <Link to={`/post/${post._id}`}>
+                    <span className={cx('post-title')}>{post.title}</span>
+                </Link>
+
                 <hr />
 
-                <div className={cx('post-date')}>1 hour ago</div>
+                <div className={cx('post-date')}>{new Date(post.createdAt).toDateString()}</div>
             </div>
 
-            <p className={cx('post-desc')}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quos laborum, laudantium aliquam fugit
-                nesciunt perferendis. Accusantium odit aliquam assumenda. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Delectus quos laborum, laudantium aliquam fugit nesciunt perferendis. Accusantium odit
-                aliquam assumenda Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quos laborum,
-                laudantium aliquam fugit nesciunt perferendis. Accusantium odit aliquam assumenda
-            </p>
+            <p className={cx('post-desc')}>{post.description}</p>
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-import routes from '~/config/routes';
+import routes from '~/configs/routes';
 import styles from './TopBar.module.scss';
 
 const cx = classNames.bind(styles);

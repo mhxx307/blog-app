@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import config from '~/config';
+import config from '~/configs';
 import { TopBar } from '~/components/layouts';
 import Login from '~/pages/Login';
 import Register from '~/pages/Registers';

@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
-import routes from '~/config/routes';
+import routes from '~/configs/routes';
 import styles from './Login.module.scss';
 
 const cx = classNames.bind(styles);

@@ -1,9 +1,12 @@
 import classNames from 'classnames/bind';
+import { useLocation } from 'react-router-dom';
 import styles from './SinglePost.module.scss';
 
 const cx = classNames.bind(styles);
 
 function SinglePost() {
+    const location = useLocation();
+
     return (
         <div className={cx('single-post')}>
             <div className={cx('single-post-wrapper')}>
