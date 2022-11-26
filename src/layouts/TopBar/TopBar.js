@@ -1,12 +1,18 @@
 import classNames from 'classnames/bind';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import Image from '~/components/Image';
 import routes from '~/configs/routes';
+import Context from '~/storage/Context';
 import styles from './TopBar.module.scss';
 
 const cx = classNames.bind(styles);
 
 function TopBar() {
-    const user = false;
+    const { user, dispatch } = useContext(Context);
+    const handleLogout = (e) => {
+        dispatch({ type: 'LOGOUT' });
+    };
     return (
         <div className={cx('top')}>
             <div className={cx('top-left')}>
@@ -37,15 +43,17 @@ function TopBar() {
                     <li className={cx('top-list-item')}>
                         <Link to={routes.write}>WRITE</Link>
                     </li>
-                    <li className={cx('top-list-item')}>{user && 'LOGOUT'}</li>
+                    <li className={cx('top-list-item')} onClick={handleLogout}>
+                        {user && 'LOGOUT'}
+                    </li>
                 </ul>
             </div>
             <div className={cx('top-right')}>
                 {user ? (
-                    <img
+                    <Image
                         className={cx('top-img')}
-                        src="https://cdn-icons-png.flaticon.com/512/219/219983.png"
-                        alt="user"
+                        src={user.profilePic}
+                        alt="user-img"
                     />
                 ) : (
                     <ul className={cx('top-list')}>

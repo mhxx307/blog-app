@@ -1,24 +1,36 @@
 import PropTypes from 'prop-types';
+import { forwardRef } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './Input.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Input({ labelText, className, primary = false, custom1 = false, ...inputProps }) {
-    const classes = cx('wrapper', {
-        [className]: className,
-        primary,
-        custom1,
-    });
+const Input = forwardRef(
+    (
+        {
+            labelText,
+            className,
+            primary = false,
+            custom1 = false,
+            ...inputProps
+        },
+        ref,
+    ) => {
+        const classes = cx('wrapper', {
+            [className]: className,
+            primary,
+            custom1,
+        });
 
-    return (
-        <div className={classes}>
-            <label>{labelText}</label>
-            <input {...inputProps} />
-        </div>
-    );
-}
+        return (
+            <div className={classes}>
+                <label>{labelText}</label>
+                <input {...inputProps} ref={ref} />
+            </div>
+        );
+    },
+);
 
 Input.propTypes = {
     labelText: PropTypes.string,
