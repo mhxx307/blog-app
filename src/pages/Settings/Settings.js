@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 
 import Button from '~/components/Button';
 import Input from '~/components/Input';
-import { Sidebar } from '~/components/layouts';
+import { Sidebar } from '~/layouts';
 import styles from './Setting.module.scss';
 
 const cx = classNames.bind(styles);

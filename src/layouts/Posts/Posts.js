@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { Post } from '~/components/layouts';
+import { Post } from '~/layouts';
 
 import styles from './Posts.module.scss';
 

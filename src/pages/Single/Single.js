@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
-import { Sidebar } from '~/components/layouts';
-import SinglePost from '~/components/layouts/SinglePost';
+import { Sidebar } from '~/layouts';
+import SinglePost from '~/layouts/SinglePost';
 import styles from './Single.module.scss';
 
 const cx = classNames.bind(styles);

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import config from '~/configs';
-import { TopBar } from '~/components/layouts';
+import { TopBar } from '~/layouts';
 import Login from '~/pages/Login';
 import Register from '~/pages/Registers';
 import Home from '~/pages/Home';

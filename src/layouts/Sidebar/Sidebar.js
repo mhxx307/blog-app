@@ -34,10 +34,8 @@ function Sidebar() {
                 <span className={cx('sidebar-title')}>CATEGORIES</span>
                 <ul className={cx('sidebar-list')}>
                     {categories.map((category, index) => (
-                        <Link to={`/?cat=${category.name}`}>
-                            <li className={cx('sidebar-list-item')} key={index}>
-                                {category.name}
-                            </li>
+                        <Link to={`/?cat=${category.name}`} key={index}>
+                            <li className={cx('sidebar-list-item')}>{category.name}</li>
                         </Link>
                     ))}
                 </ul>
