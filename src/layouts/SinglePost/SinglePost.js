@@ -23,7 +23,13 @@ function SinglePost() {
     return (
         <div className={cx('single-post')}>
             <div className={cx('single-post-wrapper')}>
-                {post.photo && <img className={cx('single-post-img')} src={post.photo} alt="single post img" />}
+                {post.photo && (
+                    <img
+                        className={cx('single-post-img')}
+                        src={process.env.REACT_APP_PUBLIC_FOLDER + post.photo}
+                        alt="single post img"
+                    />
+                )}
 
                 <h1 className={cx('single-post-title')}>
                     {post.title}
@@ -45,7 +51,9 @@ function SinglePost() {
                             <b>{post.username}</b>
                         </Link>
                     </span>
-                    <span className={cx('single-post-date')}>{new Date(post.createdAt).toDateString()}</span>
+                    <span className={cx('single-post-date')}>
+                        {new Date(post.createdAt).toDateString()}
+                    </span>
                 </div>
 
                 <p className={cx('single-post-desc')}>{post.description}</p>

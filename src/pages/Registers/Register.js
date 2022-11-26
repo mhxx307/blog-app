@@ -61,7 +61,7 @@ function Register() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <Button className={cx('register-btn')} success>
+                <Button className={cx('register-btn')} success type="submit">
                     Register
                 </Button>
             </form>
@@ -70,7 +70,11 @@ function Register() {
                     Login
                 </Link>
             </Button>
-            {error && <span className={cx('register-error')}>Something went wrong!</span>}
+            {error && (
+                <span className={cx('register-error')}>
+                    Something went wrong!
+                </span>
+            )}
         </div>
     );
 }

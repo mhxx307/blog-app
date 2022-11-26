@@ -49,6 +49,7 @@ const Login = () => {
                     className={cx('login-btn')}
                     primary
                     disabled={isFetching}
+                    type="submit"
                 >
                     Login
                 </Button>

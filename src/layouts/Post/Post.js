@@ -9,7 +9,11 @@ const cx = classNames.bind(styles);
 function Post({ post }) {
     return (
         <div className={cx('post')}>
-            <Image className={cx('post-img')} src={post.photo} alt={post.photo} />
+            <Image
+                className={cx('post-img')}
+                src={process.env.REACT_APP_PUBLIC_FOLDER + post.photo}
+                alt={post.photo}
+            />
 
             <div className={cx('post-info')}>
                 <div className={cx('post-cats')}>
@@ -26,7 +30,9 @@ function Post({ post }) {
 
                 <hr />
 
-                <div className={cx('post-date')}>{new Date(post.createdAt).toDateString()}</div>
+                <div className={cx('post-date')}>
+                    {new Date(post.createdAt).toDateString()}
+                </div>
             </div>
 
             <p className={cx('post-desc')}>{post.description}</p>
