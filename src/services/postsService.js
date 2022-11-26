@@ -1,8 +1,8 @@
 import * as request from '~/utils/httpRequest';
 
-export const getPosts = async () => {
+export const getPosts = async (search) => {
     try {
-        const res = await request.get('/posts');
+        const res = await request.get('/posts' + search);
         return res;
     } catch (err) {
         console.log(err);

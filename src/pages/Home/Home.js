@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 import styles from './Home.module.scss';
@@ -9,15 +10,16 @@ const cx = classNames.bind(styles);
 
 function Home() {
     const [posts, setPosts] = useState([]);
+    const { search } = useLocation();
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = await postsService.getPosts();
+            const res = await postsService.getPosts(search);
             setPosts(res);
         };
 
         fetchPosts();
-    }, []);
+    }, [search]);
 
     return (
         <>

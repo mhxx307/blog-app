@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 import styles from './SinglePost.module.scss';
 import * as postsService from '~/services/postsService';
 
@@ -38,7 +39,11 @@ function SinglePost() {
 
                 <div className={cx('single-post-info')}>
                     <span className={cx('single-post-author')}>
-                        Author: <b>{post.username}</b>
+                        Author:
+                        <Link to={`/?user=${post.username}`}>
+                            {' '}
+                            <b>{post.username}</b>
+                        </Link>
                     </span>
                     <span className={cx('single-post-date')}>{new Date(post.createdAt).toDateString()}</span>
                 </div>

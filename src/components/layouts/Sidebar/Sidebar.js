@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import styles from './Sidebar.module.scss';
 import * as categoriesService from '~/services/categoriesService';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -33,9 +34,11 @@ function Sidebar() {
                 <span className={cx('sidebar-title')}>CATEGORIES</span>
                 <ul className={cx('sidebar-list')}>
                     {categories.map((category, index) => (
-                        <li className={cx('sidebar-list-item')} key={index}>
-                            {category.name}
-                        </li>
+                        <Link to={`/?cat=${category.name}`}>
+                            <li className={cx('sidebar-list-item')} key={index}>
+                                {category.name}
+                            </li>
+                        </Link>
                     ))}
                 </ul>
             </div>

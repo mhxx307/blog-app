@@ -9,7 +9,7 @@ function Posts({ posts }) {
     return (
         <div className={cx('posts')}>
             {posts.map((post) => {
-                return <Post post={post} />;
+                return <Post post={post} key={post._id} />;
             })}
         </div>
     );
