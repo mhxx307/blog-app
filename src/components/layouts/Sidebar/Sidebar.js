@@ -1,9 +1,19 @@
 import classNames from 'classnames/bind';
+import { useEffect, useState } from 'react';
 import styles from './Sidebar.module.scss';
+import * as categoriesService from '~/services/categoriesService';
 
 const cx = classNames.bind(styles);
 
 function Sidebar() {
+    const [categories, setCategories] = useState([]);
+    useEffect(() => {
+        const getCategories = async () => {
+            const res = await categoriesService.getCategories();
+            setCategories(res);
+        };
+        getCategories();
+    }, []);
     return (
         <div className={cx('sidebar')}>
             <div className={cx('sidebar-item')}>
@@ -22,12 +32,11 @@ function Sidebar() {
             <div className={cx('sidebar-item')}>
                 <span className={cx('sidebar-title')}>CATEGORIES</span>
                 <ul className={cx('sidebar-list')}>
-                    <li className={cx('sidebar-list-item')}>Life</li>
-                    <li className={cx('sidebar-list-item')}>Music</li>
-                    <li className={cx('sidebar-list-item')}>Style</li>
-                    <li className={cx('sidebar-list-item')}>Sport</li>
-                    <li className={cx('sidebar-list-item')}>Tech</li>
-                    <li className={cx('sidebar-list-item')}>Cinema</li>
+                    {categories.map((category, index) => (
+                        <li className={cx('sidebar-list-item')} key={index}>
+                            {category.name}
+                        </li>
+                    ))}
                 </ul>
             </div>
 

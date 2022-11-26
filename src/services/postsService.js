@@ -8,3 +8,12 @@ export const getPosts = async () => {
         console.log(err);
     }
 };
+
+export const getPost = async (postId) => {
+    try {
+        const res = await request.get(`/posts/${postId}`);
+        return res;
+    } catch (err) {
+        console.log(err);
+    }
+};

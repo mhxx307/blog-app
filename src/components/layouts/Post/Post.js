@@ -13,8 +13,10 @@ function Post({ post }) {
 
             <div className={cx('post-info')}>
                 <div className={cx('post-cats')}>
-                    {post.categories.map((cat) => (
-                        <span className={cx('post-cat')}>{cat.name}</span>
+                    {post.categories.map((cat, index) => (
+                        <span className={cx('post-cat')} key={index}>
+                            {cat.name}
+                        </span>
                     ))}
                 </div>
 
