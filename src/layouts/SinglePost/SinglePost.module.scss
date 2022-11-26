@@ -3,6 +3,8 @@
 }
 
 .single-post-wrapper {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     padding-right: 0;
 }
@@ -56,4 +58,32 @@
         font-size: 3rem;
         font-weight: 600;
     }
+}
+
+.single-post-title-input {
+    margin: 10px;
+    font-family: 'Lora', serif;
+    font-size: 2.8rem;
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    color: gray;
+    &:focus {
+        outline: none;
+    }
+}
+
+.single-post-desc-input {
+    color: #666;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    border: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+.update-btn {
+    width: 100px;
+    align-self: flex-end;
+    margin-top: 20px;
 }

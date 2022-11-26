@@ -15,6 +15,7 @@ function Write() {
     const [desc, setDesc] = useState('');
     const [file, setFile] = useState(null);
     const { user } = useContext(Context);
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -39,7 +40,7 @@ function Write() {
 
         const createNewPost = async () => {
             const res = await postsService.createPost(newPost);
-            console.log(res);
+            !res && setError("Can't create post. Title already exists.");
             window.location.replace('/post/' + res.data._id);
         };
 
@@ -55,7 +56,7 @@ function Write() {
                     alt="write img"
                 />
             )}
-
+            {error && <span className={cx('write-error')}>{error}</span>}
             <form
                 action=""
                 className={cx('write-form')}

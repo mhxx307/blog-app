@@ -31,7 +31,22 @@ export const deletePost = async (postId, username) => {
     try {
         const res = await httpRequest.delete(`/posts/${postId}`, {
             data: {
-                username: username,
+                username,
+            },
+        });
+        return res;
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+export const updatePost = async (postId, username, title, desc) => {
+    try {
+        const res = await httpRequest.put(`/posts/${postId}`, {
+            data: {
+                username,
+                title,
+                description: desc,
             },
         });
         return res;

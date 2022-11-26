@@ -13,6 +13,7 @@ const Input = forwardRef(
             className,
             primary = false,
             custom1 = false,
+            custom2 = false,
             ...inputProps
         },
         ref,
@@ -21,6 +22,7 @@ const Input = forwardRef(
             [className]: className,
             primary,
             custom1,
+            custom2,
         });
 
         return (
@@ -37,6 +39,7 @@ Input.propTypes = {
     className: PropTypes.string,
     primary: PropTypes.bool,
     custom1: PropTypes.bool,
+    custom2: PropTypes.bool,
 };
 
 export default Input;
