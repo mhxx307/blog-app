@@ -50,11 +50,16 @@ function TopBar() {
             </div>
             <div className={cx('top-right')}>
                 {user ? (
-                    <Image
-                        className={cx('top-img')}
-                        src={user.profilePic}
-                        alt="user-img"
-                    />
+                    <Link to="/settings">
+                        <Image
+                            className={cx('top-img')}
+                            src={
+                                process.env.REACT_APP_PUBLIC_FOLDER +
+                                user.profilePic
+                            }
+                            alt="user-img"
+                        />
+                    </Link>
                 ) : (
                     <ul className={cx('top-list')}>
                         <li className={cx('top-list-item')}>

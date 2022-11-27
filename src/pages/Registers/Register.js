@@ -14,7 +14,6 @@ function Register() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -27,7 +26,6 @@ function Register() {
             };
             const res = await authService.register(user);
             res.data && window.location.replace('/login');
-            setError(res);
         };
 
         register();
@@ -70,11 +68,6 @@ function Register() {
                     Login
                 </Link>
             </Button>
-            {error && (
-                <span className={cx('register-error')}>
-                    Something went wrong!
-                </span>
-            )}
         </div>
     );
 }
