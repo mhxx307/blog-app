@@ -12,4 +12,6 @@ You need install a node.js project to have a rest api
 
 ### `This is my personal self-study project`
 
-### `This project is implement in netlify`
+### `This project is implement in netlify https://minhquan-blogapp.netlify.app/`
+
+### `video test in local https://youtu.be/39TDl20-hS0`

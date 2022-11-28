@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import styles from './Sidebar.module.scss';
 import * as categoriesService from '~/services/categoriesService';
 import { Link } from 'react-router-dom';
+import images from '~/assets/images';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -19,14 +21,15 @@ function Sidebar() {
         <div className={cx('sidebar')}>
             <div className={cx('sidebar-item')}>
                 <span className={cx('sidebar-title')}>ABOUT ME</span>
-                <img
+                <Image
                     className={cx('sidebar-img')}
-                    src="https://cdn-icons-png.flaticon.com/512/219/219983.png"
+                    src={images.profile}
                     alt="user"
                 />
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quibusdam odit incidunt asperiores
-                    harum natus eos? Ea maiores voluptatem nam.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem quibusdam odit incidunt asperiores harum natus eos?
+                    Ea maiores voluptatem nam.
                 </p>
             </div>
 
@@ -35,7 +38,9 @@ function Sidebar() {
                 <ul className={cx('sidebar-list')}>
                     {categories.map((category, index) => (
                         <Link to={`/?cat=${category.name}`} key={index}>
-                            <li className={cx('sidebar-list-item')}>{category.name}</li>
+                            <li className={cx('sidebar-list-item')}>
+                                {category.name}
+                            </li>
                         </Link>
                     ))}
                 </ul>

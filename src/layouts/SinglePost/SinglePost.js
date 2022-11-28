@@ -36,6 +36,7 @@ function SinglePost() {
 
     const handleUpdate = async () => {
         await postsService.updatePost(post._id, user.username, title, desc);
+        console.log(post._id, user.username);
         // window.location.reload();
         setUpdateMode(false);
     };

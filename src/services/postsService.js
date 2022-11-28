@@ -43,11 +43,9 @@ export const deletePost = async (postId, username) => {
 export const updatePost = async (postId, username, title, desc) => {
     try {
         const res = await httpRequest.put(`/posts/${postId}`, {
-            data: {
-                username,
-                title,
-                description: desc,
-            },
+            username: username,
+            title: title,
+            description: desc,
         });
         return res;
     } catch (err) {

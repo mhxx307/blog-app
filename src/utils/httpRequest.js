@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const httpRequest = axios.create({
-    baseURL: process.env.REACT_APP_HEROKU_URL,
+    baseURL: process.env.REACT_APP_LOCAL_URL,
 });
 
 export const get = async (path, options = {}) => {
